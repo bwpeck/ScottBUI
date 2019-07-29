@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Menu from './Menu';
-import Header from './components/header';
-import StickyFooter from './components/footer';
+import Header from './components/Header';
+import StickyFooter from './components/Footer';
+import Search from './components/Search';
 
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Search />
       <StickyFooter />
     </div>
   );
