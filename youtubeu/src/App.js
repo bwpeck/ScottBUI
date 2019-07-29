@@ -1,13 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react'
 import './App.css';
-import Menu from './Menu';
 
 
 function App() {
   return (
     <div className="App">
-      <Menu />
+     
      
     </div>
   );
