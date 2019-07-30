@@ -1,5 +1,6 @@
 import React from 'react';
 import {Form} from 'react-bootstrap';
+import '../App.css';
 
 
 export const SearchVideo = ({handleFormSubmit, handleChange, videoName}) => {
