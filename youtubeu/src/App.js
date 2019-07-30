@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import StickyFooter from './components/Footer';
+import Header from './components/header';
+import StickyFooter from './components/footer';
 import Search from './components/Search';
 
 
