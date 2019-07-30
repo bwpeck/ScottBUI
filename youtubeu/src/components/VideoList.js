@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import VideoCard from './components/VideoCard';
+import VideoCard from '../components/VideoCard';
 
 
 

@@ -2,11 +2,11 @@ import React from 'react';
 import {ResponsiveEmbed, Card} from 'react-bootstrap';
 
 export const VDetails = ({selectedVideo}) => {
-    if (!selectedVideo)
-    return null;
-    const Video_URL = 'https://www.youtube.com/embed/${selectVideo.id.videoID}';
-    const {title, channelTitle, description, publshedAt} = selectedVideo.snippet;
-    const videoCreatedDate = new Date (publishedAt);
+    if (!selectedVideo) 
+        return null;
+    const VIDEO_URL = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
+    const {title, channelTitle, description, publishedAt} = selectedVideo.snippet;
+    const videoCreatedDate = new Date(publishedAt);
     const month = videoCreatedDate.toLocaleString('en-us', {month: 'long'});
 
     return (
@@ -14,10 +14,9 @@ export const VDetails = ({selectedVideo}) => {
             width: '100%',
             height: '300'
         }}>
-
             <ResponsiveEmbed
-            aspect="a16by9"
-            style={{
+                aspect="a16by9"
+                style={{
                 maxHeight: 400
             }}>
                 <embed type="video/webm" src={VIDEO_URL}/>
@@ -40,3 +39,4 @@ export const VDetails = ({selectedVideo}) => {
             </Card>
         </div>
     )
+}
