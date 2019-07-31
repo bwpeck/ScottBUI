@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import Menu from './Menu';
-import SearchAppBar from './Menu';
-import Form from './form';
+import NavBar from './components/NavBar';
+import SearchBar from './components/SearchBar';
+import VideoCard from './components/VideoCard';
 
 function App() {
 	return (
 		<div className="App">
-			<SearchAppBar />
-			<Form />
+			<NavBar />
+			<SearchBar />
+			<VideoCard />
 		</div>
 	);
 }

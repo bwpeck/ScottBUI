@@ -10,34 +10,19 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.form-container {
-	width: 60%;
+/* .form-container {
+	width: 800px ;
+} */
+
+#search {
+	background: lightblue;
+	margin: 40px auto 0;
 }
 
-.form {
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 50px;
+.search {
+	margin: 40px auto 0;
 }
 
-.drop-down-label {
-	margin-left: 425px;
-}
-
-.drop-down {
-	width: 20%;
-}
-
-.searchBtn {
-	background: #3f51b5;
-	border: none;
-	padding: 2.5px 6px;
-	align-self: center;
-	justify-content: center;
-}
-
-.searchField {
-	padding-left: 4px;
+#card-container {
+	margin-top: 25px;
 }
