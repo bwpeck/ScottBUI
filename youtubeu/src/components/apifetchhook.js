@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import api from './api';
+
 const YT_API_KEY = process.env.REACT_APP_YT_API_KEY;
 
 const useFetch = (initialURL, params) => {
@@ -28,16 +29,16 @@ const useFetch = (initialURL, params) => {
                     key: YT_API_KEY
                 }
             })
-                .catch(error => {
-                    setIsError(true);
-                    if (error.response) {
-                        throw new Error(`Error: ${JSON.stringify(error.message)}`);
-                    } else if (error.request) {
-                        throw new Error(`Error: No response from the server`);
-                    } else {
-                        throw new Error('Error', error.message);
-                    }
-                })
+            .catch(error => {
+                setIsError(true);
+                if (error.response) {
+                    throw new Error(`Error: ${JSON.stringify(error.message)}`);
+                } else if (error.request) {
+                    throw new Error(`Error: No response from the server`);
+                } else {
+                    throw new Error('Error', error.message);
+                }
+            })
                 .then(response => {
                     setData(response.data.items)
                     setIsLoading(false);
