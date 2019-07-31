@@ -13,9 +13,9 @@ const App = () => {
   setSelectedVideo] = useState('');
 
   const [data,
-  isLoading,
-isError,
-setUrl] = useFetch('/search/?q=${videoName}', {defaultResponse: []});
+    isLoading,
+    isError,
+    setUrl] = useFetch(`/search/?q=${videoName}`, {defaultResponse: []});
 
 const handleVideoOnClick = (video) => {
   setSelectedVideo (video);
