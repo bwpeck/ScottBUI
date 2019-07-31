@@ -35,9 +35,8 @@ function InputWithIcon({handleChange, query, handleSearch}) {
   );
 }
 
-export default function Search() {
+export default function Search({setVideos}) {
   const [query, setQuery] = useState();
-  const [videos, setVideos] = useState();
   var youtube = new Youtube();
   youtube.setKey("AIzaSyDXEabt6qVD6vGY5ZcGiHTuCHYyJ43aPDo");
 
@@ -47,18 +46,19 @@ export default function Search() {
   }
 
   function handleSearch(e) {
-    youtube.search(query, 10, function(error, result) {
+    youtube.search(query, 15, function(error, result) {
       if (error) {
         console.log(error);
       }
       else {
-        console.log(JSON.stringify(result, null, 2));
+        console.log(JSON.stringify(result.items, null, 2));
+        setVideos(result.items)
       }
     });
   }
 
   return (
-    <Container alignContent="Grid" >
+    <Container>
       <InputWithIcon handleChange={handleChange} value={query} handleSearch={handleSearch} />
     </Container>
   )
