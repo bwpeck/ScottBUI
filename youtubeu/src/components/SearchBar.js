@@ -1,4 +1,5 @@
-import React, { UseState } from 'react';
+// ! triple check imports when you get errors.
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -21,37 +22,27 @@ const useStyles = makeStyles({
 	}
 });
 
-const SearchBar = (props) => {
-	const [ searchValue, setSearchValue ] = UseState('');
-	// * setting the input state
+const SearchBar = () => {
 	const classes = useStyles();
+	// ! you had the useState import as 'UseState' instead of 'useState'.
+	const [ searchValue, setSearchValue ] = useState('');
 
 	// * youtube Api
-	// var YouTube = require('youtube-node');
-	// var youTube = new YouTube();
-	// youTube.setKey('AIzaSyB1OOSpTREs85WUMvIgJvLTZKye4BVsoFU');
+	var YouTube = require('youtube-node');
+	var youTube = new YouTube();
+	youTube.setKey('AIzaSyB1OOSpTREs85WUMvIgJvLTZKye4BVsoFU');
 
-	// youTube.search('World War z Trailer', 1, function(error, result) {
-	// 	if (error) {
-	// 		console.log(error);
-	// 	} else {
-	// 		console.log(JSON.stringify(result, null, 2));
-	// 	}
-	// });
+	youTube.search('World War z Trailer', 1, function(error, result) {
+		if (error) {
+			console.log(error);
+		} else {
+			console.log(JSON.stringify(result, null, 2));
+		}
+	});
 
 	const handleInputChanges = (event) => {
 		console.log(event.target.value);
 		setSearchValue(event.target.value);
-	};
-
-	const resetInputField = () => {
-		setSearchValue('');
-	};
-
-	const callSearchFunction = (event) => {
-		event.preventDefault();
-		props.search(searchValue);
-		resetInputField();
 	};
 
 	return (
@@ -62,7 +53,7 @@ const SearchBar = (props) => {
 			<InputBase
 				className={classes.input}
 				placeholder="Search.."
-				value={searchValue}
+				Value={searchValue}
 				onChange={handleInputChanges}
 			/>
 			<IconButton className={classes.iconButton} aria-label="search">
