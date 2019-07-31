@@ -18,35 +18,41 @@ const useStyles = makeStyles({
 	},
 	iconButton: {
 		padding: 10
-	},
-	divider: {
-		width: 1,
-		height: 28,
-		margin: 4
 	}
 });
 
 const SearchBar = (props) => {
+	const [ searchValue, setSearchValue ] = UseState('');
+	// * setting the input state
 	const classes = useStyles();
-	// const [ searchValue, setSearchValue ] = UseState('');
 
+	// * youtube Api
 	// var YouTube = require('youtube-node');
 	// var youTube = new YouTube();
 	// youTube.setKey('AIzaSyB1OOSpTREs85WUMvIgJvLTZKye4BVsoFU');
 
-	// const handleInputChanges = (event) => {
-	// 	setSearchValue(event.target.value);
-	// };
+	// youTube.search('World War z Trailer', 1, function(error, result) {
+	// 	if (error) {
+	// 		console.log(error);
+	// 	} else {
+	// 		console.log(JSON.stringify(result, null, 2));
+	// 	}
+	// });
 
-	// const resetInputField = () => {
-	// 	setSearchValue('');
-	// };
+	const handleInputChanges = (event) => {
+		console.log(event.target.value);
+		setSearchValue(event.target.value);
+	};
 
-	// const callSearchFunction = (event) => {
-	// 	event.preventDefault();
-	// 	props.search(searchValue);
-	// 	resetInputField();
-	// };
+	const resetInputField = () => {
+		setSearchValue('');
+	};
+
+	const callSearchFunction = (event) => {
+		event.preventDefault();
+		props.search(searchValue);
+		resetInputField();
+	};
 
 	return (
 		<Paper className={`search ${classes.root}`}>
@@ -56,9 +62,8 @@ const SearchBar = (props) => {
 			<InputBase
 				className={classes.input}
 				placeholder="Search.."
-				inputProps={{ 'aria-label': 'search google maps' }}
-				// value={searchValue}
-				// onChange={handleInputChanges}
+				value={searchValue}
+				onChange={handleInputChanges}
 			/>
 			<IconButton className={classes.iconButton} aria-label="search">
 				<SearchIcon />
@@ -66,4 +71,5 @@ const SearchBar = (props) => {
 		</Paper>
 	);
 };
+
 export default SearchBar;
