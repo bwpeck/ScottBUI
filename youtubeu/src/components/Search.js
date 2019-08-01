@@ -8,6 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -21,6 +24,14 @@ function InputWithIcon({handleChange, query, handleSearch}) {
   return (
     <div className={classes.margin}>
       <Grid container spacing={1} alignItems="flex-end">
+        <FormControl variant="filled" style={{margin: '10px', minWidth: 120}}>
+          <Select>
+            <MenuItem value={'test'}>Test</MenuItem>
+            <MenuItem value={'test'}>Test</MenuItem>
+            <MenuItem value={'test'}>Test</MenuItem>
+            <MenuItem value={'test'}>Test</MenuItem>
+          </Select>
+        </FormControl>
         <Grid item alignContent="center" >
           <SearchIcon />
         </Grid>
